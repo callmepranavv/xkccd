@@ -3,7 +3,9 @@ session_start();
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
-require 'vendor/autoload.php';
+require 'libs/PHPMailer.php';
+require 'libs/Exception.php';
+require 'libs/SMTP.php';
 $mail = new PHPMailer(true);
 
 try {
