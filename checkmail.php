@@ -2,7 +2,9 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
-require 'vendor/autoload.php';
+require 'libs/PHPMailer.php';
+require 'libs/Exception.php';
+require 'libs/SMTP.php';
 require_once 'configure.php';
 $GLOBALS['comicid']=rand(1,2478);
 $sql = "SELECT * FROM users";
