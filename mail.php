@@ -21,7 +21,7 @@ try {
     
     //Recipients
     $mail->setFrom('ykram2019@gmail.com');
-    $mail->addAddress("$_POST['email'l");     //Add a recipient
+    $mail->addAddress($_SESSION['email']);     //Add a recipient
 
     //Content
     $otp=rand(1,1000);
