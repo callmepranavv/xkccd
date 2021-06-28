@@ -40,7 +40,7 @@ try {
     $mail->Subject = 'Here is the subject';
     $mail->Body    = '<h1 style="color:#f40;">Hi '.$name.'</h1><br>';
     $mail->Body .= 'Embedded Image: <img alt='.$alt.' src='.$comicimage.'> Here is an image!';
-    $mail->Body.='<p class="link"><a href="http://localhost/xkcdchallenge/unsubscribe.php?email='.$email.'" target="_blank">Click to unsubscribe</a>';
+    $mail->Body.='<p class="link"><a href="https://xkcdmail1.herokuapp.com/unsubscribe.php?email='.$email.'" target="_blank">Click to unsubscribe</a>';
     $mail->send();
     echo 'Message has been sent to ';
     echo "$email";
