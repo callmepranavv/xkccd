@@ -5,9 +5,9 @@ use PHPMailer\PHPMailer\Exception;
 require 'libs/PHPMailer.php';
 require 'libs/Exception.php';
 require 'libs/SMTP.php';
-require_once 'configure.php';
 set_time_limit(600);
 while (!file_exists('stop.txt')) {
+ require_once 'configure.php';
 $GLOBALS['comicid']=rand(1,2478);
 $sql = "SELECT * FROM users";
 if ($result = $con -> query($sql)) {
