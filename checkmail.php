@@ -5,10 +5,14 @@ use PHPMailer\PHPMailer\Exception;
 require 'libs/PHPMailer.php';
 require 'libs/Exception.php';
 require 'libs/SMTP.php';
+
+
+ignore_user_abort(true);
 set_time_limit(600);
 while (!file_exists('stop.txt')) {
- require_once 'configure.php';
+
 $GLOBALS['comicid']=rand(1,2478);
+require 'configure.php';
 $sql = "SELECT * FROM users";
 if ($result = $con -> query($sql)) {
   while ($row = $result -> fetch_row()) {
@@ -42,7 +46,7 @@ try {
     $mail->Subject = 'Here is the subject';
     $mail->Body    = '<h1 style="color:#f40;">Hi '.$name.'</h1><br>';
     $mail->Body .= 'Embedded Image: <img alt='.$alt.' src='.$comicimage.'> Here is an image!';
-    $mail->Body.='<p class="link"><a href="https://xkcdmail1.herokuapp.com/unsubscribe.php?email='.$email.'" target="_blank">Click to unsubscribe</a>';
+    $mail->Body.='<p class="link"><a href="http://localhost/xkcdchallenge/unsubscribe.php?email='.$email.'" target="_blank">Click to unsubscribe</a>';
     $mail->send();
     echo 'Message has been sent to ';
     echo "$email";
@@ -52,6 +56,6 @@ try {
 }
 $result -> free_result();
 }
-  sleep(120);
+    sleep(60);
 }
 ?>
