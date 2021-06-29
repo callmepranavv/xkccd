@@ -8,9 +8,7 @@ require 'libs/Exception.php';
 require 'libs/SMTP.php';
 $mail = new PHPMailer(true);
 
-try {
-    //Server settings
-    //$mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+try {       
     $mail->isSMTP();                                            //Send using SMTP
     $mail->Host       ='smtp.gmail.com';                     //Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
@@ -27,9 +25,8 @@ try {
     $otp=rand(1,1000);
     $_SESSION['otp1']=$otp;
     $mail->isHTML(true);                                  //Set email format to HTML
-    $mail->Subject = 'Here is the subject';
+    $mail->Subject = 'verify your email';
     $mail->Body    = 'Verification OTP is <br>'.$otp;
-    $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
     $mail->send();
     echo 'Message has been sent';
 } catch (Exception $e) {
