@@ -18,7 +18,7 @@ if ($result = $con -> query($sql)) {
 $requesturl="https://xkcd.com/$comicid/info.0.json";
 $json = file_get_contents($requesturl);
 $obj=json_decode($json);
-//echo $obj->title;
+$title=$obj->title;
 $alt= $obj->alt;
 $comicimage=$obj->img; 
 $mail = new PHPMailer(true);
@@ -39,9 +39,9 @@ try {
 
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
-    $mail->Subject = 'Here is the subject';
+    $mail->Subject = 'XKCD comics';
     $mail->Body    = '<h1 style="color:#f40;">Hi '.$name.'</h1><br>';
-    $mail->Body .= 'Embedded Image: <img alt='.$alt.' src='.$comicimage.'> Here is an image!';
+    $mail->Body .= '<h2>'.$title.'</h2><br> <img alt='.$alt.' src='.$comicimage.'>';
     $mail->Body.='<p class="link"><a href="https://xkcdmail1.herokuapp.com/unsubscribe.php?email='.$email.'" target="_blank">Click to unsubscribe</a>';
     $mail->send();
     echo 'Message has been sent to ';
