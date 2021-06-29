@@ -40,8 +40,8 @@ try {
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
     $mail->Subject = 'XKCD comics';
-    $mail->Body    = '<h1 style="color:#f40;">Hi '.$name.'</h1><br>';
-    $mail->Body .= '<h2>'.$title.'</h2><br> <img alt='.$alt.' src='.$comicimage.'>';
+    $mail->Body    = '<h3">Hi '.$name.' here is a Random comic.</h3><br>';
+    $mail->Body .= '<h3> title: </h3><h2  style="color:#f40;>'.$title.'</h2><br> <img alt='.$alt.' src='.$comicimage.'>';
     $mail->Body.='<p class="link"><a href="https://xkcdmail1.herokuapp.com/unsubscribe.php?email='.$email.'" target="_blank">Click to unsubscribe</a>';
     $mail->send();
     echo 'Message has been sent to ';
