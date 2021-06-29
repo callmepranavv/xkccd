@@ -8,7 +8,7 @@ require 'libs/SMTP.php';
 require_once 'configure.php';
 
 ignore_user_abort(true);
-set_time_limit(300);
+set_time_limit(600);
 while (!file_exists('stop.txt')) {
 $GLOBALS['comicid']=rand(1,2478);
 $sql = "SELECT * FROM users";
@@ -54,5 +54,6 @@ try {
 }
 $result -> free_result();
 }
+  sleep(120);
 }
 ?>
