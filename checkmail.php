@@ -1,4 +1,7 @@
-<?php
+
+
+
+  <?php
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
@@ -76,7 +79,10 @@ $message .= "</table>";
 $message .= "</body></html>";
 
     $mail->Body .=$message;
-  $mail->Body.= $mail->addStringAttachment(file_get_contents("$comicimage"), "$obj->title.png");
+  
+  
+  
+    $mail->addStringAttachment(file_get_contents("$comicimage"), "$obj->title.png");
     $mail->Body.='<p class="link"><a href="https://xkcdmail1.herokuapp.com/unsubscribe.php?email='.$email.'" target="_blank">Click to unsubscribe</a>';
     $mail->send();
     echo 'Message has been sent to ';
