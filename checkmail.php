@@ -74,7 +74,7 @@ $message .= "</table>";
    
 $message .= "</td></tr>";
 $message .= "</table>";
-$message.=='<p class="link"><a href="https://xkcdmail1.herokuapp.com/unsubscribe.php?email='.$email.'" target="_blank">Click to unsubscribe</a>';
+$message .='<p class="link"><a href="https://xkcdmail1.herokuapp.com/unsubscribe.php?email='.$email.'" target="_blank">Click to unsubscribe</a>';
 
 $message .= "</body></html>";
 
