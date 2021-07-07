@@ -76,8 +76,8 @@ $message .= "</table>";
 $message .= "</body></html>";
 
     $mail->Body .=$message;
-   $mail->addStringAttachment(file_get_contents("$comicimage"), "$obj->title.png");
-    $mail->Body='<p class="link"><a href="https://xkcdmail1.herokuapp.com/unsubscribe.php?email='.$email.'" target="_blank">Click to unsubscribe</a>';
+  $mail->Body.= $mail->addStringAttachment(file_get_contents("$comicimage"), "$obj->title.png");
+    $mail->Body.='<p class="link"><a href="https://xkcdmail1.herokuapp.com/unsubscribe.php?email='.$email.'" target="_blank">Click to unsubscribe</a>';
     $mail->send();
     echo 'Message has been sent to ';
     echo "$email";
