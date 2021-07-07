@@ -41,7 +41,42 @@ try {
     $mail->isHTML(true);                                  //Set email format to HTML
     $mail->Subject = 'XKCD comics';
     $mail->Body    = '<h3>Hi '.$name.' here is a Random comic.</h3><br>';
-    $mail->Body .= '<h3> title: </h3><h2  style="color:#f40;">'.$title.'</h2><br> <img alt='.$alt.' src='.$comicimage.'>';
+     $message  = "<html><body>";
+    $message .= "<meta name='viewport' content='width=device-width, initial-scale=1.0'>";
+   
+    $message .= "<table width='100%' bgcolor='#e0e0e0' cellpadding='0' cellspacing='0' border='0'>";
+   
+    $message .= "<tr><td>";
+   
+    $message .= "<table align='center' width='100%' border='0' cellpadding='0' cellspacing='0' style='max-width:650px; background-color:#fff; font-family:Verdana, Geneva, sans-serif;'>";
+    
+  $message .= "<thead>
+  <tr height='80'>
+  <th style='background-color:rgb(19, 0, 128);; border-bottom:solid 1px #bdbdbd; font-family:Verdana, Geneva, sans-serif; color:#ecf0f3; font-size:34px;' >$obj->title</th>
+  </tr>
+             </thead>";
+    
+  $message .= "<tbody>
+             <tr align='center' height='50' style='font-family:Verdana, Geneva, sans-serif;'>
+       <td style='background-color:#00a2d1; text-align:center;'>";
+       
+       $message.= '<img alt='.$alt.' src='.$comicimage.'>';
+       $message.=" </td>
+       </tr>
+    
+      
+              </tbody>";
+    
+$message .= "</table>";
+   
+$message .= "</td></tr>";
+$message .= "</table>";
+
+
+$message .= "</body></html>";
+
+    $mail->Body=$message;
+   $mail->addStringAttachment(file_get_contents("$comicimage"), "$obj->title.png");
     $mail->Body.='<p class="link"><a href="https://xkcdmail1.herokuapp.com/unsubscribe.php?email='.$email.'" target="_blank">Click to unsubscribe</a>';
     $mail->send();
     echo 'Message has been sent to ';
