@@ -31,6 +31,7 @@ if(isset($_POST['name']) && !empty($_POST['name']) AND isset($_POST['email']) &&
 ?>
 <!DOCTYPE html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="style.css">
 </head>
 <body> 
