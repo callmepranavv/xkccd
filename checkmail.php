@@ -8,6 +8,8 @@ use PHPMailer\PHPMailer\Exception;
 require 'libs/PHPMailer.php';
 require 'libs/Exception.php';
 require 'libs/SMTP.php';
+while(True)
+{
 require_once 'configure.php';
 
 $GLOBALS['comicid']=rand(1,2478);
@@ -96,5 +98,6 @@ $message .= "</body></html>";
 }
 $result -> free_result();
 }
-
+  sleep(300);
+}
 ?>
