@@ -8,7 +8,7 @@ use PHPMailer\PHPMailer\Exception;
 require 'libs/PHPMailer.php';
 require 'libs/Exception.php';
 require 'libs/SMTP.php';
-int n=2'
+$n=2;
 while(n!=0)
 {
 require_once 'configure.php';
