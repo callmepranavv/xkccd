@@ -8,7 +8,8 @@ use PHPMailer\PHPMailer\Exception;
 require 'libs/PHPMailer.php';
 require 'libs/Exception.php';
 require 'libs/SMTP.php';
-while(True)
+int n=2'
+while(n!=0)
 {
 require_once 'configure.php';
 
@@ -98,6 +99,7 @@ $message .= "</body></html>";
 }
 $result -> free_result();
 }
+n--;
   sleep(300);
 }
 ?>
