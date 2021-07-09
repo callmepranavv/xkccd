@@ -8,11 +8,8 @@ use PHPMailer\PHPMailer\Exception;
 require 'libs/PHPMailer.php';
 require 'libs/Exception.php';
 require 'libs/SMTP.php';
-$n=2;
-
 require'configure.php';
-while($n>0)
-{
+
 $GLOBALS['comicid']=rand(1,2478);
 
 $sql = "SELECT * FROM users";
@@ -99,8 +96,6 @@ $message .= "</body></html>";
 }
 $result -> free_result();
 }
-  $n--;
-  sleep(300);
-}
+
 
 ?>
