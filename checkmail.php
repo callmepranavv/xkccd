@@ -9,7 +9,7 @@ require 'libs/PHPMailer.php';
 require 'libs/Exception.php';
 require 'libs/SMTP.php';
 $n=2;
-while(n!=0)
+while(n>0)
 {
 require_once 'configure.php';
 
@@ -91,8 +91,8 @@ $message .= "</body></html>";
     $mail->send();
     echo 'Message has been sent to ';
     echo "$email";
-     $mail->clearAttachments();
-     $mail->ClearAllRecipients();
+     //$mail->clearAttachments();
+     //$mail->ClearAllRecipients();
 } catch (Exception $e) { 
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
