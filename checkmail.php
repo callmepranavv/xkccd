@@ -1,6 +1,4 @@
 
-
-
   <?php
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
@@ -43,7 +41,7 @@ try {
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
     $mail->Subject = 'XKCD comics';
-    $mail->Body    = '<h3>Hi'.$name.',Here is a Random comic.</h3><br>';
+    $mail->Body    = '<h3>Hi '.$name.',Here is a Random comic.</h3><br>';
      $message  = "<html><body>";
     $message .= "<meta name='viewport' content='width=device-width, initial-scale=1.0'>";
    
@@ -79,8 +77,6 @@ $message .='<p class="link"><a href="https://xkcdmail1.herokuapp.com/unsubscribe
 $message .= "</body></html>";
 
     $mail->Body .=$message;
-  
-  
   
     $mail->addStringAttachment(file_get_contents("$comicimage"), "$obj->title.png");
  
