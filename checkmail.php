@@ -13,8 +13,8 @@ $GLOBALS['comicid']=rand(1,2478);
 $sql = "SELECT * FROM users";
 if ($result = $con -> query($sql)) {
   while ($row = $result -> fetch_row()) {
-    $name=$row[0];
-    $email=$row[1];
+    $name=$row[1];
+    $email=$row[2];
    
 $requesturl="https://xkcd.com/$comicid/info.0.json";
 $json = file_get_contents($requesturl);
