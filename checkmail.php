@@ -13,6 +13,7 @@ $GLOBALS['comicid']=rand(1,2478);
 $sql = "SELECT * FROM users";
 if ($result = $con -> query($sql)) {
   while ($row = $result -> fetch_row()) {
+    $id=$row[0];
     $name=$row[1];
     $email=$row[2];
    
@@ -72,7 +73,7 @@ $message .= "</table>";
    
 $message .= "</td></tr>";
 $message .= "</table>";
-$message .='<p class="link"><a href="https://xkcdmail1.herokuapp.com/unsubscribe.php?email='.$email.'" target="_blank">Click to unsubscribe</a>';
+$message .='<p class="link"><a href="https://xkcdmail1.herokuapp.com/unsubscribe.php?email='.$id.'" target="_blank">Click to unsubscribe</a>';
 
 $message .= "</body></html>";
 
