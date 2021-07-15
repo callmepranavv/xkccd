@@ -2,10 +2,10 @@
 
 <?php
 require 'configure.php';
-$email=$_GET['email'];
+$id=$_GET['id'];
 
 
-$sql="DELETE FROM `users` WHERE email ='$email'";
+$sql="DELETE FROM `users` WHERE id ='$id'";
 if ($con->query($sql) === TRUE) 
                 {
                     echo "You are Undubdcribed now";
